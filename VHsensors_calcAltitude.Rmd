@@ -11,12 +11,12 @@ output:
 ---
 ## credits
 This code is a translation of Sivan Toledo's MATLAB code  
-The data, contributed by Dr. Yoni Vortman and Anat Levi, of navigating study done in Hula valey at 2020
+The data, contributed by Dr. Yoni Vortman and Anat Levi, of navigating study done in Hula valley at 2020
 
 ## Background
 After loading Temperature and pressure measurements from vildehaye sensors, you can calculate altitude by pressure data. 
 
-For this calculation we need information about the environment barometric data on same day. We can download this information from the Israely Meteorological Service (IMS)
+For this calculation we need information about the environment barometric data on same day. We can download this information from the Israeli Meteorological Service (IMS)
 
 Accessing to IMS data requires a Token (access key).  [here a link](https://ims.gov.il/he/ObservationDataAPI) for more information.
 
@@ -49,6 +49,7 @@ in functions folder we contains local source files contains functions, which are
 ```{r load libraries, message = FALSE}
 library(toolsForAtlas) # useful functions for atlas users
 options("digits"=14)   # show long numbers till 14 digits
+Sys.setlocale("LC_TIME","C")  # change local date to English names
 source("functions/pressures.R", encoding = "UTF-8")
 ```
 
@@ -125,6 +126,7 @@ now - show the altitude plot
 alts.df$dateTime<-as.POSIXct(alts.df$TIME, tz="UTC", origin="1970-01-01")
 ggplot(alts.df, aes(x=dateTime, y=alts))+
   geom_point(aes(colour = factor(TAG)), size=0.5)+
+  labs(y="Alt. above  Sea Level (m)")+
   theme_bw()+
   theme(legend.title = element_blank())
 ```
