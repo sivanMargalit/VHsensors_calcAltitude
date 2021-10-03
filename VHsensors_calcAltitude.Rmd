@@ -9,7 +9,7 @@ output:
       collapsed: true
       smooth_scroll: true
 ---
-## credits
+## credits 
 This code is a translation of Sivan Toledo's MATLAB code  
 The data, contributed by Dr. Yoni Vortman and Anat Levi, of navigating study done in Hula valley at 2020
 
