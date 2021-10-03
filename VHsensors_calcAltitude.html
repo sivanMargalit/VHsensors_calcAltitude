@@ -11,7 +11,7 @@
 
 <meta name="author" content="sivan margalit" />
 
-<meta name="date" content="2021-03-31" />
+<meta name="date" content="2021-10-03" />
 
 <title>vildehaye sensors tutorials: Calculate Altitude by Pressure</title>
 
@@ -1512,7 +1512,7 @@ div.tocify {
 
 <h1 class="title toc-ignore">vildehaye sensors tutorials: Calculate Altitude by Pressure</h1>
 <h4 class="author">sivan margalit</h4>
-<h4 class="date">2021-03-31</h4>
+<h4 class="date">2021-10-03</h4>
 
 </div>
 
@@ -1556,9 +1556,16 @@ VHsensors_calcAltitude.Rproj : R project file, define the folder, where it locat
 <h3>loading libraries and local sources</h3>
 <p>The package “toolsForAtlas” contains the methods for read binary sensors data, and access to remote database by url address.</p>
 <p>in functions folder we contains local source files contains functions, which are not in the package</p>
-<pre class="r"><code>library(toolsForAtlas) # useful functions for atlas users
-options(&quot;digits&quot;=14)   # show long numbers till 14 digits
+<pre class="r"><code>library(toolsForAtlas) # useful functions for atlas users</code></pre>
+<pre><code>## Warning: replacing previous import &#39;data.table::last&#39; by &#39;dplyr::last&#39; when
+## loading &#39;toolsForAtlas&#39;</code></pre>
+<pre><code>## Warning: replacing previous import &#39;data.table::first&#39; by &#39;dplyr::first&#39; when
+## loading &#39;toolsForAtlas&#39;</code></pre>
+<pre><code>## Warning: replacing previous import &#39;data.table::between&#39; by &#39;dplyr::between&#39;
+## when loading &#39;toolsForAtlas&#39;</code></pre>
+<pre class="r"><code>options(&quot;digits&quot;=14)   # show long numbers till 14 digits
 source(&quot;functions/pressures.R&quot;, encoding = &quot;UTF-8&quot;)</code></pre>
+<pre><code>## Warning: package &#39;dplyr&#39; was built under R version 4.0.5</code></pre>
 </div>
 <div id="loading-data-from-binary-files" class="section level3">
 <h3>loading data from binary files</h3>
@@ -1566,7 +1573,7 @@ source(&quot;functions/pressures.R&quot;, encoding = &quot;UTF-8&quot;)</code></
 bat_df&lt;-read_BAT(&quot;data/tag-972001006611-BATMON.bin&quot;)
 bat_df$TAG&lt;-&quot;972001006611&quot;
 head(bat_df, 4)</code></pre>
-<pre><code>##         TIME temp    battery          TAG
+<pre><code>##         TIME temp          V          TAG
 ## 1 1606841067   13 2.87109375 972001006611
 ## 2 1606841068   17 2.87109375 972001006611
 ## 3 1606841069   17 2.87109375 972001006611

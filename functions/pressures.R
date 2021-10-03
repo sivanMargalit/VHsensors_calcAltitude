@@ -3,7 +3,6 @@ library(ggplot2)
 library(xlsx)
 
 
-
 get.ISM.data<-function(easting=257000,
                        northing=780000,
                        fromTime,
